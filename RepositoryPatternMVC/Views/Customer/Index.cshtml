@@ -1,0 +1,72 @@
+﻿@model IEnumerable<RepositoryPatternMVC.Customers>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Add Customer", "AddCustomer")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomerID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContactName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContactTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CompanyName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.City)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Country)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phone)
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.CustomerID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ContactName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ContactTitle)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CompanyName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Address)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.City)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Country)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Phone)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "EditCustomers", new { EmployeeId = item.CustomerID }) |
+        @Html.ActionLink("Delete", "DeleteCustomers", new { EmployeeId = item.CustomerID })
+    </td>
+</tr>
+    }
+</table>
